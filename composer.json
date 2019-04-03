@@ -1,0 +1,43 @@
+{
+    "name": "zalatov/yii2-extend",
+    "version": "1.0",
+    "description": "Extend classes for for Yii2",
+    "type": "yii2-extend",
+    "license": "MIT",
+    "homepage": "https://github.com/zalatov/yii2-extend",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Zalatov Alexander",
+            "email": "zalatov.ao@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/zalatov/yii2-extend.git",
+            "reference": "master"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "zalatov/yii2-extend",
+                "version": "1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/zalatov/yii2-extend.git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "yiisoft/yii2": "^2"
+    },
+    "autoload": {
+        "psr-4": {
+            "zalatov\\yii2\\extend\\": "src"
+        }
+    }
+}
