@@ -1,6 +1,6 @@
 {
     "name": "zalatov/yii2-extend",
-    "version": "1.2",
+    "version": "1.2.1",
     "description": "Extend classes for for Yii2",
     "type": "yii2-extend",
     "license": "MIT",
