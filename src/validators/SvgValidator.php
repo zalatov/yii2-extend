@@ -30,11 +30,11 @@ class SvgValidator extends Validator {
 	 */
 	protected function validateValue($value) {
 		if (false === is_string($value)) {
-			return [$this->message];
+			return [$this->message, []];
 		}
 
 		if (false === static::isSvg($value)) {
-			return [$this->message];
+			return [$this->message, []];
 		}
 
 		return null;
