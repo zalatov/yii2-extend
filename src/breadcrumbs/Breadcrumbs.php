@@ -70,7 +70,12 @@ class Breadcrumbs {
 	 * @author Залатов Александр <zalatov.ao@gmail.com>
 	 */
 	public function get(string $actionId): Breadcrumb {
-		return $this->_get($actionId, $this->breadcrumbs);
+		$result = $this->_get($actionId, $this->breadcrumbs);
+		if (null !== $result) {
+			return $result;
+		}
+
+		throw new InvalidConfigException;
 	}
 
 	/**
@@ -80,13 +85,11 @@ class Breadcrumbs {
 	 * @param string            $actionId    Идентификатор экшена
 	 * @param Breadcrumb[]|null $breadcrumbs Список breadcrumbs, по которым будет осуществлён рекурсивный поиск
 	 *
-	 * @return Breadcrumb
-	 *
-	 * @throws InvalidConfigException Если не удалось найти
+	 * @return Breadcrumb|null
 	 *
 	 * @author Залатов Александр <zalatov.ao@gmail.com>
 	 */
-	private function _get(string $actionId, array $breadcrumbs): Breadcrumb {
+	private function _get(string $actionId, array $breadcrumbs): ?Breadcrumb {
 		foreach ($breadcrumbs as $bActionId => $breadcrumb) {
 			if ($actionId === $bActionId) {
 				return $breadcrumb;
@@ -98,7 +101,7 @@ class Breadcrumbs {
 			}
 		}
 
-		throw new InvalidConfigException;
+		return null;
 	}
 
 	/**
