@@ -55,7 +55,7 @@ class Breadcrumbs {
 		$breadcrumbs = $this->asArray();
 		$last        = end($breadcrumbs);
 
-		return $last['label'];
+		return (string)$last['label'];
 	}
 
 	/**
